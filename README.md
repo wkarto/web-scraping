@@ -1,15 +1,82 @@
 # Web Scraping and NLP with Requests, BeautifulSoup, and spaCy
 
-Complete the tasks in the Python Notebook in this repository.
-Make sure to add and push the pkl or text file of your scraped html (this is specified in the notebook)
+This project showcases a complete workflow for web scraping and text mining using Python. It demonstrates how to scrape an article from the web, extract clean text content, and perform natural language processing (NLP) with `spaCy`.
 
-## Rubric
+## Features
+- Scrape and save article HTML using `requests` and `BeautifulSoup`
+- Extract plain text using `.get_text()`
+- Analyze token and lemma frequencies using `spaCy`
+- Score sentences based on token and lemma occurrences
+- Visualize sentence scores using histograms
+- Filter and analyze only specific parts of speech (e.g., nouns)
 
-* (Question 1) Article html stored in separate file that is committed and pushed: 1 pt
-* (Question 2) Article text is correct: 1 pt
-* (Question 3) Correct (or equivalent in the case of multiple tokens with same frequency) tokens printed: 1 pt
-* (Question 4) Correct (or equivalent in the case of multiple lemmas with same frequency) lemmas printed: 1 pt
-* (Question 5) Correct scores for first sentence printed: 2 pts (1 / function)
-* (Question 6) Histogram shown with appropriate labelling: 1 pt
-* (Question 7) Histogram shown with appropriate labelling: 1 pt
-* (Question 8) Thoughtful answer provided: 1 pt
+## How to Use This Repository
+
+1. Clone this repository.
+2. Install required dependencies using:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Open `notebook.ipynb` using Jupyter Notebook or JupyterLab.
+4. Run the notebook cell by cell and follow the comments.
+
+## Repository Contents
+
+- `notebook.ipynb`: Main Jupyter Notebook with all questions and code.
+- `article.html` or `article.pkl`: Saved HTML content of the article (Question 1).
+- `README.md`: This documentation file.
+- `requirements.txt`: List of Python dependencies used in the notebook.
+
+---
+
+## Summary of Questions & Output
+
+### ✔ Question 1
+- Article HTML is saved to a separate file and pushed to the repository.
+
+### ✔ Question 2
+- Clean text extracted using `.get_text()` and printed successfully.
+
+### ✔ Question 3
+**Top 5 Most Frequent Tokens:**
+1. comment — 136  
+2. march — 133  
+3. 2021 — 133  
+4. says — 132  
+5. report — 130  
+
+### ✔ Question 4
+**Top 5 Most Frequent Lemmas:**
+1. comment — 157  
+2. say — 134  
+3. march — 133  
+4. 2021 — 133  
+5. report — 130  
+
+### ✔ Question 5
+- Sentence scoring function implemented for both token and lemma approaches.
+- Correct score for the first sentence printed from both methods.
+
+### ✔ Question 6
+- Histogram plotted for token-based sentence scores with appropriate title and axis labels.
+
+### ✔ Question 7
+- Histogram plotted for lemma-based sentence scores.
+- Highest sentence frequency observed around score range 4 to 6.
+
+### ✔ Question 8
+- **Omitted Words When Filtering Nouns:**  
+  Words like "says" or "said" (verbs), "quickly" (adverb), and other non-noun types would be excluded.
+
+- **Code Change:**  
+  Modify the loop with:
+  ```python
+  if token.pos_ == "NOUN":
+      # process token
+  ```
+
+---
+
+
